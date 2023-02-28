@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :chart-data="options"/>
   </div>
 </template>
 
@@ -12,6 +11,32 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      options: {
+        shape: {
+          //points提供点连接数组
+          //最终显示点依次连接的结果
+          //不同图形有不同的绘制规则·
+            points: [
+                [0, 50],
+                [10, 60,],
+                [20, 40,],
+                [30, 80,],
+                [40, 20,],
+                [50, 50,],
+                [60, 40,],
+                [100, 40,],
+            ]
+        },
+        style: {
+            stroke: 'red',
+            lineWidth: 1,
+            fill: 'none',
+        },
+    }
+    }
   }
 }
 </script>
