@@ -1,5 +1,5 @@
 <template>
-  <div :class="className" style="height: 700px;">
+  <div :class="className" style="height: 300px; width: 300px">
   </div>
 </template>
 
@@ -76,6 +76,6 @@ export default {
 </script>
 <style scoped>
 #main {
-  height: 700px;
+
 }
 </style>

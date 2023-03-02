@@ -1,17 +1,43 @@
 <template>
   <div id="app">
-    <HelloWorld :chart-data="options"/>
+    <div class="echarts">
+      <h3>Echarts</h3>
+      <EChart :chart-data="eoptions"></EChart>
+    </div>
+    <div class="antv">
+      <h3>antV</h3>
+      <AntV></AntV>
+    </div>
+    <div class="d3">
+    <h3>d3</h3>
+      <D3Chart></D3Chart>
+    </div>
+    <div class="test">
+      <D3Test></D3Test>
+    </div>
+    <div >
+      <pieChart></pieChart>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import AntV from './components/antV.vue';
+import D3Chart from './components/D3Chart.vue';
+// import HelloWorld from './components/HelloWorld.vue'
+import EChart from './components/EChart.vue'
+import D3Test from './components/D3Test.vue';
+import pieChart from './components/pieChart.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  },
+    // HelloWorld,
+    AntV,
+    EChart,
+    D3Chart,
+    D3Test,
+    pieChart
+},
   data() {
     return {
       options: {
@@ -35,13 +61,33 @@ export default {
             lineWidth: 1,
             fill: 'none',
         },
-    }
+      },
+      eoptions:{
+        title: {
+          text: 'Echart示例'
+        },
+        tooltip: {},
+        legend: {
+          data: ['销量']
+        },
+        xAxis: {
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {},
+        series: [
+          {
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+          }
+        ]
+      }
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,5 +95,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 </style>
