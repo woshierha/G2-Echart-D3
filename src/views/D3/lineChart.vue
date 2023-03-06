@@ -1,6 +1,5 @@
 <template>
     <div>
-      <h2>Vue.js and D3 Line Chart</h2>
       <svg></svg>
       <p></p>
       <p></p>
@@ -39,14 +38,14 @@
   
       const svg = d3.select("svg").attr("width", width).attr("height", height);
       const g = svg.append("g");
-      var circle = svg.append("circle")
-      circle.attr("cx", 50)
-      circle.attr("cy", 50)
-      circle.attr("r", 50)
-      circle.attr("fill", 'skyblue')
-      circle.on("click", function() {
-        console.log('点击了一个圆圈');
-      })
+    //   var circle = svg.append("circle")
+    //   circle.attr("cx", 50)
+    //   circle.attr("cy", 50)
+    //   circle.attr("r", 50)
+    //   circle.attr("fill", 'skyblue')
+    //   circle.on("click", function() {
+    //     console.log('点击了一个圆圈');
+    //   })
      //动态属性
       svg.style('color', () => {
         return 'hsl('+ Math.random() * 360 + ', 100%, 50%)'
@@ -86,7 +85,7 @@
       g.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x));
-
+  
       g.append("g")
         .call(d3.axisLeft(y))
         .append("text")

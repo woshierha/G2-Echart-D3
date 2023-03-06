@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div class="echarts">
+     <router-view key="/"></router-view>
+    <!-- <div class="echarts">
       <h3>Echarts</h3>
       <EChart :chart-data="eoptions"></EChart>
     </div>
@@ -17,26 +18,21 @@
     </div>
     <div >
       <pieChart></pieChart>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import AntV from './components/antV.vue';
-import D3Chart from './components/D3Chart.vue';
-// import HelloWorld from './components/HelloWorld.vue'
-import EChart from './components/EChart.vue'
-import D3Test from './components/D3Test.vue';
-import pieChart from './components/pieChart.vue';
+
 export default {
   name: 'App',
   components: {
     // HelloWorld,
-    AntV,
-    EChart,
-    D3Chart,
-    D3Test,
-    pieChart
+    // AntV,
+    // EChart,
+    // D3Chart,
+    // D3Test,
+    // pieChart
 },
   data() {
     return {
