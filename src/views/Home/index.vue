@@ -17,11 +17,13 @@ import EChart from '@/components/EChart.vue'
 import D3Test from '@/components/D3Test.vue';
 import pieChart from '@/components/pieChart.vue';
 import router from '@/routes/router';
+import {Debounce }from './index'
+import { debounce } from '@antv/util';
   export default{
     components: { AntV, D3Chart, EChart, D3Test, pieChart, router },
     data() {
         return {
-
+          timer: null
         }
     },
     methods:{
@@ -38,7 +40,20 @@ import router from '@/routes/router';
             break;
         }
         
-      }
+      },
+      debounce(fn, delay) {
+        let timer 
+        return function() {
+          clearTimeout(timer)
+          timer = setTimeout(() => {
+            fn()
+          }, delay)
+        }
+      },
+      handleClick: debounce(function() {
+        console.log('sf')
+      }, 2000)
+      ,   
     }
   }
 </script>
